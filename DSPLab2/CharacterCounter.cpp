@@ -2,7 +2,8 @@
 
 CharacterCounter::CharacterCounter()
 {
-
+	fTotalNumberOfCharacters = 0;
+	count = 0;
 }
 
 
