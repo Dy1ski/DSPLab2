@@ -1,8 +1,9 @@
 #include "CharacterCounter.h"
+#include <iostream>
 
 using namespace std;
 
-char main()
+int main()
 {
 	CharacterCounter lCounter;
 	unsigned char lChar;
