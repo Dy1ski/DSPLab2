@@ -1,5 +1,5 @@
 #include "CharacterCounter.h"
-
+#include <iostream>
 using namespace std;
 
 CharacterCounter::CharacterCounter() 
@@ -14,16 +14,16 @@ void CharacterCounter::count(unsigned char aCharacter) // acharacter is what's p
 	fCharacterCounts[aCharacter]++; // adds the character to the array
 }
 
-ostream& operator<<(ostream& aOStream, const CharacterCounter& aCharacterCounter) // .. call the member variables
-{
-	// for loop
-	
-		for (int i = 0; i < aCharacterCounter.fTotalNumberOfCharacters; i++) //
-		{
-			aOStream << "Character Counts for " << aCharacterCounter.fTotalNumberOfCharacters << " characters: " << "\n" << aCharacterCounter.fCharacterCounts[i] << endl;
-			/// add a loop of 255 which resets the array to 0 everytime you print out 
-		}
-	
-		
-		return aOStream;
+ostream& operator<<(ostream& aOStream, const CharacterCounter& aCharacterCounter)
+{		
+			aOStream << "Character Counts for " << aCharacterCounter.fTotalNumberOfCharacters << " characters:"  << endl;
+
+			for (int i = 0; i < 256; i++)
+			{
+				if ( aCharacterCounter.fCharacterCounts[i] != 0)
+				{
+					aOStream << (char)i << ":\t" << aCharacterCounter.fCharacterCounts[i] << endl;
+				}
+			}
+			return aOStream;
 }
